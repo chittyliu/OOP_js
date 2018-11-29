@@ -1,13 +1,13 @@
 // Factory Function
-function createCircle(radious) {
-  return {
-    radious,
-    draw: function() {
-      console.log("draw");
-    }
-  };
-}
-const circle = createCircle(1);
+// function createCircle(radious) {
+//   return {
+//     radious,
+//     draw: function() {
+//       console.log("draw");
+//     }
+//   };
+// }
+// const circle = createCircle(1);
 
 // Constructor Function
 function Circle(radious) {
@@ -17,7 +17,13 @@ function Circle(radious) {
   };
 }
 
-const another = new Circle(1);
+const circle = new Circle(10);
+
+for (let key in circle) {
+  if (typeof circle[key] !== "function")
+    // bracket notation
+    console.log(key, circle[key]);
+}
 
 // const circle = {
 //   //   property holds value
@@ -32,4 +38,4 @@ const another = new Circle(1);
 //   }
 // };
 
-circle.draw();
+// circle.draw();
