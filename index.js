@@ -15,22 +15,29 @@ function Circle(radious) {
 
   let defaultLocation = { x: 0, y: 0 };
 
-  let computeoptimumLocation = function(factor) {
-    // ...
+  this.getDefaultLcation = function() {
+    return defaultLocation;
   };
 
   this.draw = function() {
-    computeoptimumLocation(0.1);
-    // defaultLocation();
-    // this.radious;
-
     console.log("draw");
   };
+
+  Object.defineProperty(this, "defaultLocation", {
+    get: function() {
+      return defaultLocation;
+    },
+    set: function(value) {
+      if (!value.x || !value.y) throw new Error("Invalid location.");
+
+      defaultLocation = value;
+    }
+  });
 }
 
 const circle = new Circle(10);
-circle.radious;
 circle.draw();
+// circle.defaultLocation = 1;
 
 // for (let key in circle) {
 //   if (typeof circle[key] !== "function")
