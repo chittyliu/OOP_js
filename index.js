@@ -25,6 +25,10 @@ for (let key in circle) {
     console.log(key, circle[key]);
 }
 
+const keys = Object.keys(circle);
+console.log(keys);
+
+if ("radious" in circle) console.log("Circle has a radious.");
 // const circle = {
 //   //   property holds value
 //   radious: 1,
